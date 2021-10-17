@@ -7,6 +7,8 @@ import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kelvin.os.domain.OS;
+import com.kelvin.os.enuns.Prioridade;
+import com.kelvin.os.enuns.Status;
 
 /*
  * DTO USADO PARA FAZER TRANSFERENCIA DE DADOS | Nunca use a classe original
@@ -74,8 +76,8 @@ public class OSDTO implements Serializable{
 		this.datafechamento = datafechamento;
 	}
 
-	public Integer getPrioridade() {
-		return prioridade;
+	public Prioridade getPrioridade() {
+		return Prioridade.toEnum(this.prioridade);
 	}
 
 	public void setPrioridade(Integer prioridade) {
@@ -90,8 +92,8 @@ public class OSDTO implements Serializable{
 		this.observacoes = observacoes;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Status getStatus() {
+		return Status.toEnum(this.status);
 	}
 
 	public void setStatus(Integer status) {
